@@ -346,6 +346,24 @@ footer {
   transform: translateX(0);
 }
 
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ⬅ center horizontal */
+  align-items: center;      /* ⬅ center vertical (jika perlu) */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-group .btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  text-align: center;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+
 /* Responsive */
 @media (max-width: 992px) {
   .section-content {
@@ -395,17 +413,19 @@ footer {
 }
 
 @media (max-width: 576px) {
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
   .btn-group {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
-  
-  .btn {
+
+  .btn-group .btn {
+    display: block;              /* pastikan block */
     width: 100%;
+    max-width: 280px;            /* batas lebar */
+    text-align: center;
+    margin: 0 auto;              /* pastikan posisi tengah */
+    padding: 0.8rem 2rem;        /* pastikan padding konsisten */
   }
 }
