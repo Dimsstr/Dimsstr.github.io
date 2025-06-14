@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+p {
+  text-align: justify;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -198,6 +202,12 @@ section {
   margin: 0 auto;
 }
 
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 5%;
+}
+
 .section-content {
   display: flex;
   align-items: center;
@@ -300,6 +310,14 @@ footer {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+footer .footer-content > p {
+  text-align: center;
+}
+
+footer .footer-content .copyright > p {
+  text-align: center;
 }
 
 .social-links {
