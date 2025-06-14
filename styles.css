@@ -51,14 +51,27 @@ a {
 
 /* Navigation */
 header {
-  position: fixed;
+  position: fixed; /* harus fixed agar bisa disembunyikan */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+header.hide {
+  top: -100px;
+  opacity: 0;
+}
+
+header.show {
+  top: 0;
+  opacity: 1;
+}
+
+
 
 nav {
   display: flex;

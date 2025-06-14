@@ -24,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          observer.unobserve(entry.target); // hanya satu kali animasi
+          observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.15
-    }
+    { threshold: 0.15 }
   );
 
   slideInElements.forEach(el => observer.observe(el));
@@ -51,5 +49,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
+  });
+
+  // 🔹 Navbar Show/Hide on Scroll
+  const header = document.querySelector("header");
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop < 80) {
+      // Di paling atas → selalu tampil
+      header.style.top = "0";
+      return;
+    }
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll ke bawah → sembunyikan navbar
+      header.style.top = "-80px";
+    } else {
+      // Scroll ke atas → tampilkan navbar
+      header.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop;
   });
 });
